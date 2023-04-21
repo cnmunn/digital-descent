@@ -1,15 +1,34 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
-<div class="tiktok-card">
-    <img src="{{ video.url }}" />
-    <div class="content">
-      <div class="text">{{ video.content }}</div>
-    </div>
+<div class="tiktok-card" [style.backgroundImage]="'url(' + video.url + ')'">
+  
 
-    <div class="info">
-      <div class="like-button">❤️ {{ video.likes }}</div>
+  <div class="content" *ngIf="isTextVisible">
+      <div class="text" [innerHTML]="formatContent(video.content)">{{ video.content }}</div>
+  </div>
+<div class="content-visibility">
+  <button mat-icon-button (click)="toggleAllContentVisible()">
+    <mat-icon>visibility</mat-icon>
+  </button>
+</div>
+
+
+
+
+  <div class="icons" *ngIf="allContentVisible">
+    <button mat-icon-button (click)="toggleTextVisibility()" style="transform: scale(1.2)">
+      <mat-icon>{{video.icon1}}</mat-icon>
+    </button>
+    <div class="likes">{{video.likes}}</div>
+    <button mat-icon-button (click)="openTextModal()" style="transform: scale(1.3)">
+      <mat-icon>{{video.icon2}}</mat-icon>
+    </button>
+  </div>
+
+    <div class="info" *ngIf="allContentVisible">
       <div class="title">{{ video.title }}</div>
       <div class="username">@{{ video.username }}</div>
     </div>

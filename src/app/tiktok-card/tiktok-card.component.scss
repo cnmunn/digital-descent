@@ -1,166 +1,89 @@
-// // .tiktok-card {
-  
-// //   position: relative;
-// //   width: 100%;
-// //   max-width: 375px; // Width of a standard phone screen
-// //   height: 95vh; // Adjust this value according to your preference
-// //   margin: 2vh auto; // Vertical centering with 5vh space at the top and bottom
-// //   overflow: hidden;
-// //   display: flex;
-// //   align-items: center;
-// //   justify-content: center;
-// //   border-radius: 20px; // Add rounded borders
-// //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); // Add a subtle shadow
-// //   background-color: black;
-// //   font-family: 'Poppins', sans-serif;
-  
-// //   img {
-// //     max-width: 100%;
-// //     height: auto;
-// //   }
-// //   .text {
-// //     font-size: 16px;
-// //     color: #aaa;
-// //     line-height: 1.5;
-// //     overflow-y: auto;
-// //     //max-height: calc(100% - 34px);
-// //     margin-left: 10px;
-// //     margin-right: 10px;
-// //   }
-  
-// //     .info {
-// //       position: absolute;
-// //       bottom: 10px;
-// //       left: 10px;
-// //       color: #aaa;
-// //       font-family: Arial, sans-serif;
-  
-// //       .like-button {
-// //         font-size: 24px;
-// //         margin-bottom: 10px;
-// //       }
-  
-// //       .title,
-// //       .username {
-// //         font-size: 16px;
-// //         margin-bottom: 5px;
-// //       }
-// //     }
-// //   }
-  
-
-// .tiktok-card {
-//   position: relative;
-//   width: 100%;
-//   max-width: 375px; // Width of a standard phone screen
-//   height: 95vh; // Adjust this value according to your preference
-//   margin: 2vh auto; // Vertical centering with 5vh space at the top and bottom
-//   overflow: hidden;
-//   border-radius: 20px; // Add rounded borders
-//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); // Add a subtle shadow
-//   background-color: black;
-//   font-family: 'Poppins', sans-serif;
-
-//   img {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     z-index: -1;
-//   }
-
-//   .text {
-//     position: absolute;
-//     top: 10px; // Adjust this value according to your preference
-//     left: 10px;
-//     right: 10px;
-//     font-size: 16px;
-//     color: #aaa;
-//     line-height: 1.5;
-//     overflow-y: auto;
-//     z-index: 1;
-//   }
-
-//   .info {
-//     position: absolute;
-//     bottom: 10px;
-//     left: 10px;
-//     color: #aaa;
-//     font-family: Arial, sans-serif;
-//     z-index: 1;
-
-//     .like-button {
-//       font-size: 24px;
-//       margin-bottom: 10px;
-//     }
-
-//     .title,
-//     .username {
-//       font-size: 16px;
-//       margin-bottom: 5px;
-//     }
-//   }
-// }
 .tiktok-card {
   position: relative;
   width: 100%;
-  max-width: 375px; // Width of a standard phone screen
-  height: 95vh; // Adjust this value according to your preference
-  margin: 2vh auto; // Vertical centering with 5vh space at the top and bottom
+  max-width: 415px; // Width of a standard phone screen
+  height: 100vh; // Adjust this value according to your preference
+  // margin: 2vh auto; // Vertical centering with 5vh space at the top and bottom
+  //margin-bottom: 10vh; // Vertical centering with 5vh space at the top and bottom
   overflow: hidden;
-  border-radius: 20px; // Add rounded borders
+  //border-radius: 20px; // Add rounded borders
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); // Add a subtle shadow
-  background-color: black;
+  // background-color: black;
   font-family: 'Poppins', sans-serif;
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
+  background-size: cover; // Ensures the image covers the entire card while maintaining its aspect ratio
+  background-position: center; // Centers the background image
 
   .content {
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: 8vh;
     left: 0;
     right: 0;
-    bottom: 15vh;
+    bottom: 17vh;
     display: flex;
     flex-direction: column;
+    padding: 2vh;
     justify-content: center;
-    padding: 10px;
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); // Semi-transparent black background
+    border-radius: 8px; // Optional: rounded corners
+    color: #fff; // White text for better visibility
     z-index: 1;
   }
 
   .text {
     font-size: 16px;
-    color: #aaa;
+    color: #f0e5e5;
     line-height: 1.5;
     overflow-y: auto;
   }
 
+
+  .icons {
+    position: absolute;
+    opacity: 0.9;
+    bottom: 15%;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    //transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  // Add this style if you want some space between the icons
+  .icons button + button {
+    margin-top: 10px;
+  }
+
+  .likes{
+    font-size: 18px;
+  }
+
+  .content-visibility {
+    position: absolute;
+    display: flex;
+    top: 15px;
+    right: 15px;
+    opacity: 0.9;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    z-index: 100; // Ensures the button is above other elements
+  }
+
+
   .info {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: #aaa;
+    bottom: 80px;
+    left: 15px;
+    color: #fff;
     font-family: Arial, sans-serif;
     z-index: 1;
-
-    .like-button {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
+    opacity: 0.95;
     .title,
     .username {
-      font-size: 16px;
+      font-size: 20px;
       margin-bottom: 5px;
     }
   }
