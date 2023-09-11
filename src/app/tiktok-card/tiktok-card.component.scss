@@ -1,8 +1,8 @@
 .tiktok-card {
   position: relative;
   width: 100%;
-  max-width: 415px; // Width of a standard phone screen
-  height: 100vh; // Adjust this value according to your preference
+  max-width: 100svw; // New viewport units
+  height: 100lvh;
   // margin: 2vh auto; // Vertical centering with 5vh space at the top and bottom
   //margin-bottom: 10vh; // Vertical centering with 5vh space at the top and bottom
   overflow: hidden;
