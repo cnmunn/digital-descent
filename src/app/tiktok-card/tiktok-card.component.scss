@@ -74,6 +74,14 @@
     z-index: 100; // Ensures the button is above other elements
   }
 
+  html{
+    height: -webkit-fail-available;
+  }
+
+  body{
+    height: -webkit-fail-available;
+  }
+
 
   .info {
     position: absolute;
